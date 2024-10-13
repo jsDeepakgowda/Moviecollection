@@ -1,0 +1,111 @@
+Django Movie Collection API
+This project is a Django-based web application that provides an API for managing movie collections. The API supports creating, updating, deleting collections, and adding movies to these collections. It also includes authentication with JWT, request counting, and more.
+
+Table of Contents:
+1.Installation
+2.Setup
+3.Usage
+4.Endpoints
+5.Testing
+6.Contributing
+
+Installation
+Clone the repository:
+git clone https://github.com/yourusername/movies-api.git
+cd movies-api
+
+Set up a virtual environment (recommended):
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+Install dependencies:
+pip install -r requirements.txt
+
+You
+create the readme file analyse this
+Copilot
+Sure, let's create a comprehensive and well-organized README file for your project. Here's a template you can use and customize as needed:
+
+Django Movie Collection API
+This project is a Django-based web application that provides an API for managing movie collections. The API supports creating, updating, deleting collections, and adding movies to these collections. It also includes authentication with JWT, request counting, and more.
+
+Table of Contents
+1.Installation
+
+2.Setup
+
+3.Usage
+
+4.Endpoints
+
+5.Testing
+
+6.Contributing
+
+7.License
+
+
+Set up a virtual environment (recommended):
+
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+Install dependencies:
+pip install -r requirements.txt
+
+Setup
+Environment Variables: Create a .env file in the root directory and add the following:
+
+DEBUG=True
+MOVIE_API_USERNAME=iNd3jDMYRKsN1pjQPMRz2nrq7N99q4Tsp9EY9cM0
+MOVIE_API_PASSWORD=Ne5DoTQt7p8qrgkPdtenTK8zd6MorcCR5vXZIJNfJwvfafZfcOs4reyasVYddTyXCz9hcL5FGGIVxw3q02ibnBLhblivqQTp4BIC93LZHj4OppuHQUzwugcYu7TIC5H1
+
+Migrate the database:
+python manage.py makemigrations
+python manage.py migrate
+
+Run the server:
+python manage.py runserver
+
+Usage
+Register: Send a POST request to http://localhost:8000/register/ with username and password.
+
+Get JWT Token: Use the registered username and password to get JWT tokens from http://localhost:8000/api/token/.
+
+Access Endpoints: Use the access token to authenticate and access the endpoints.
+
+Endpoints
+Register User:
+
+POST /register/
+
+Request: { "username": "<username>", "password": "<password>" }
+
+Get Movies:
+
+GET /movies/
+
+Request Count:
+
+GET /request-count/
+
+Reset Request Count:
+
+POST /request-count/reset/
+
+Create Collection:
+
+POST /collection/
+
+Request: { "title": "<title>", "description": "<description>", "movies": [ ... ] }
+
+Update Collection:
+
+PUT /collection/<collection_uuid>/
+
+Request: { "title": "<title>", "description": "<description>", "movies": [ ... ] }
+
+Delete Collection:
+
+DELETE /collection/<collection_uuid>/
+
+##########################################################################################
